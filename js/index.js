@@ -50,6 +50,23 @@ navlinks[3].textContent = siteContent["nav"]["nav-item-4"];
 navlinks[4].textContent = siteContent["nav"]["nav-item-5"];
 navlinks[5].textContent = siteContent["nav"]["nav-item-6"];
 
+navlinks[0].style.color = 'green';
+navlinks[1].style.color = 'green';
+navlinks[2].style.color = 'green';
+navlinks[3].style.color = 'green';
+navlinks[4].style.color = 'green';
+navlinks[5].style.color = 'green';
+
+let navbar = document.querySelector("nav");
+let newlink1 = document.createElement("a");
+newlink1.textContent = "Home";
+newlink1.style.color = "green";
+let newlink2 = document.createElement("a");
+newlink2.textContent = "FAQs";
+newlink2.style.color = "green";
+navbar.prepend(newlink1);
+navbar.appendChild(newlink2);
+
 let bigText = document.querySelector("h1");
 let linebreak = document.createElement("br");
 let bigTextString = siteContent["cta"]["h1"].split(" ");
