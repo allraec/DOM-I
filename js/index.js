@@ -54,6 +54,12 @@ for(let i = 0; i<navlinks.length; i++){
   navlinks[i].textContent = siteContent["nav"][`nav-item-${i}`];
 }
 
+navlinks[0].textContent = siteContent["nav"]["nav-item-1"]; //Services
+navlinks[1].textContent = siteContent["nav"]["nav-item-2"]; //Product
+navlinks[2].textContent = siteContent["nav"]["nav-item-3"]; //Vision
+navlinks[3].textContent = siteContent["nav"]["nav-item-4"]; //Features
+navlinks[4].textContent = siteContent["nav"]["nav-item-5"]; //About
+navlinks[5].textContent = siteContent["nav"]["nav-item-6"]; //Contact
 
 //Sets texts for h1 element. Object split into array to accomodate white space addition.
 let bigText = document.querySelector("h1");
@@ -113,6 +119,12 @@ texts[8].textContent = siteContent["footer"]["copyright"];
 for(let i = 0; i<navlinks.length; i++){
   navlinks[i].style.color = 'green';
 }
+navlinks[0].style.color = 'green';
+navlinks[1].style.color = 'green';
+navlinks[2].style.color = 'green';
+navlinks[3].style.color = 'green';
+navlinks[4].style.color = 'green';
+navlinks[5].style.color = 'green';
 
 //Adds two more elements to the navbar called 'Home' and 'FAQs' at the front and end of the nav bar.
 let navbar = document.querySelector("nav");
