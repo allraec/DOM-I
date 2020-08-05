@@ -84,22 +84,25 @@ middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"])
 
 //Sets block text content of main section.
 let texts = document.querySelectorAll("p");
-texts[0].textContent = siteContent["main-content"]["features-content"];
-texts[1].textContent = siteContent["main-content"]["about-content"];
-texts[2].textContent = siteContent["main-content"]["services-content"];
-texts[3].textContent = siteContent["main-content"]["product-content"];
-texts[4].textContent = siteContent["main-content"]["vision-content"];
+let mainContent = document.querySelectorAll(".main-content p");
+mainContent[0].textContent = siteContent["main-content"]["features-content"];
+mainContent[1].textContent = siteContent["main-content"]["about-content"];
+mainContent[2].textContent = siteContent["main-content"]["services-content"];
+mainContent[3].textContent = siteContent["main-content"]["product-content"];
+mainContent[4].textContent = siteContent["main-content"]["vision-content"];
 
 //Sets text context of address of contact section.
+let contact = document.querySelectorAll(".contact p");
 let address1 = siteContent["contact"]["address"].slice(0,18);
 let address2 = siteContent["contact"]["address"].slice(19);
-texts[5].textContent = address1 + "\n" + address2;
-texts[5].style = "white-space: pre";
+contact[0].textContent = address1 + "\n" + address2;
+contact[0].style = "white-space: pre";
 
 //Sets phone # and email text context and copyright section.
-texts[6].textContent = siteContent["contact"]["phone"];
-texts[7].textContent = siteContent["contact"]["email"];
-texts[8].textContent = siteContent["footer"]["copyright"];
+contact[1].textContent = siteContent["contact"]["phone"];
+contact[2].textContent = siteContent["contact"]["email"];
+let footer = document.querySelector("footer");
+footer.textContent = siteContent["footer"]["copyright"];
 
 //////////////////////////////////////////////////////////////////////////////
 //                                                                          //
@@ -123,3 +126,31 @@ newlink2.textContent = "FAQs";
 newlink2.style.color = "green";
 navbar.prepend(newlink1);
 navbar.appendChild(newlink2);
+
+
+//////////////////////////////////////////////////////////////////////////////
+//                                                                          //
+//                                 STRETCH                                   //
+//                                                                          //
+//////////////////////////////////////////////////////////////////////////////
+let body = document.querySelector("body");
+
+button.addEventListener("click", (event) =>{
+  for(let i = 0; i<h4.length; i++){
+    h4[i].style.color = '#33658A';
+  }
+
+  for(let i = 0; i<navlinks.length; i++){
+    navlinks[i].style.color = '#6a66a3';
+    navlinks[i].style.fontWeight = 'bolder';
+  }
+
+  newlink1.style.color = "#6a66a3";
+  newlink1.style.fontWeight = 'bolder';
+  newlink2.style.color = "#6a66a3";
+  newlink2.style.fontWeight = 'bolder';
+  
+  bigText.style.color = 'red';
+
+  body.style.backgroundColor = '#F1E9DA';
+});
