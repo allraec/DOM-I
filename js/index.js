@@ -43,6 +43,7 @@ logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
 const navItems = document.querySelectorAll('a');
 
+//DRY code for the navbar
 for(let i=0; i < navItems.length; i++){
 
   navItems[i].textContent = siteContent["nav"][`nav-item-${i+1}`];
@@ -50,60 +51,66 @@ for(let i=0; i < navItems.length; i++){
 
 };
 
+//Big text... manipulated strings to look exact with the whitespace
 const h1 = document.querySelector('h1');
 const h1String = siteContent["cta"]["h1"].split(" ");
 h1.textContent = h1String[0] + "\n" + h1String[1] + "\n" + h1String[2];
 h1.style = "white-space: pre";
 
+//button
 const button = document.querySelector('button');
 button.textContent = siteContent["cta"]["button"];
 
+//cta image
 const ctaIMG = document.querySelector('#cta-img');
 ctaIMG.src = siteContent["cta"]["img-src"];
 
+//set setting the h4 tags for the main content
 const h4Main = document.querySelectorAll('.main-content h4');
-
 h4Main[0].textContent = siteContent["main-content"]["features-h4"];
 h4Main[1].textContent = siteContent["main-content"]["about-h4"];
 h4Main[2].textContent = siteContent["main-content"]["services-h4"];
 h4Main[3].textContent = siteContent["main-content"]["product-h4"];
 h4Main[4].textContent = siteContent["main-content"]["vision-h4"];
 
+//setting the paragraphs for the main content
 const pMain = document.querySelectorAll('.main-content p');
-
 pMain[0].textContent = siteContent["main-content"]["features-content"];
 pMain[1].textContent = siteContent["main-content"]["about-content"];
 pMain[2].textContent = siteContent["main-content"]["services-content"];
 pMain[3].textContent = siteContent["main-content"]["product-content"];
 pMain[4].textContent = siteContent["main-content"]["vision-content"];
 
+//middle image in main content
 const mainMiddleImg = document.querySelector('#middle-img');
 mainMiddleImg.src = siteContent["main-content"]["middle-img-src"];
 
+//contact headline
 const contactH4 = document.querySelector('.contact h4');
 contactH4.textContent = siteContent["contact"]["contact-h4"];
 
+//contact address splice to add whitespace
 const addressText1 = siteContent["contact"]["address"].slice(0,18);
 const addressText2 = siteContent["contact"]["address"].slice(19);
-
 const contact = document.querySelectorAll('.contact p');
 contact[0].textContent = addressText1 + "\n" + addressText2;
 contact[0].style = 'white-space: pre';
 
+//adds phone and email
 contact[1].textContent = siteContent["contact"]["phone"];
 contact[2].textContent = siteContent["contact"]["email"];
 
+//sets footer
 const footerText = document.querySelector('footer p');
 footerText.textContent = siteContent["footer"]["copyright"];
 
+//adds two elements in as first and last child nodes
 const navBar = document.querySelector('nav');
-
 const home = document.createElement('a');
 home.textContent = 'Home';
 navBar.prepend(home);
 home.style.color = 'green';
-
 const faqs = document.createElement('a');
 faqs.textContent = 'FAQs';
-navBar.append(faqs);
+navBar.appendChild(faqs);
 faqs.style.color = 'green';
