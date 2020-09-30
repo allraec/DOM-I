@@ -114,3 +114,28 @@ const faqs = document.createElement('a');
 faqs.textContent = 'FAQs';
 navBar.appendChild(faqs);
 faqs.style.color = 'green';
+
+
+//Stretch
+
+const body = document.querySelector("body");
+
+button.addEventListener('click', (event) => {
+
+  home.textContent = "Stay Home!";
+  h1.style.color = "red";
+  ctaIMG.style.opacity = ".5";
+  home.style.color = "magenta";
+  faqs.style.color = "magenta";
+  for(let i=0; i < navItems.length; i++){
+
+    navItems[i].style.color = 'magenta';
+
+  };
+  body.style.backgroundColor = "pink";
+  for(let i=0; i < h4Main.length; i++){
+
+    h4Main[i].style.color = 'yellow';
+
+  };
+});
